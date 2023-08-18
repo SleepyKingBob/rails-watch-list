@@ -1,0 +1,13 @@
+<h1><%= @list.name %></h1>
+
+<div class="row">
+  <% @movies.each do |movie| %>
+  <div class="col-4">
+    <div class="card card-flex p-5 movie-img" style="background: url('<%= movie.poster_url%>')">
+    </div>
+    <p><%= movie.title %></p>
+  </div>
+    <% end %>
+</div>
+
+<p><%= link_to "+ Add a movie to the List", new_list_bookmark_path(@list.id) %></p>
